@@ -2,7 +2,6 @@ export interface Answer {
   id: number;
   answer: string;
   correct: boolean;
-  remarks?: string;
 }
 
 export interface Questions {

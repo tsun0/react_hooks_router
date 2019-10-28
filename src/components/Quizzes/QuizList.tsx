@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Header, Icon, Item } from 'semantic-ui-react';
+import { Header, Icon, Item, Checkbox } from 'semantic-ui-react';
 
 import { Answer } from '../../quizData';
 
@@ -13,13 +13,12 @@ const QuizList: FC<QuizListProps> = ({
   answers,
 }) => (
   <>
-    <Header as="h2">{question}</Header>
+    <Header as="h2"><Icon name="question circle" size="large" />{question}</Header>
     <Item.Group>
       {answers.map(a => (
         <Item>
-          <Icon name="question circle" size="large" />
           <Item.Content>
-            <Item.Header>{a.id}. {a.answer}</Item.Header>
+            <Checkbox radio label={{ children: a.id + '. ' + a.answer }}></Checkbox>
           </Item.Content>
         </Item>
       ))}
