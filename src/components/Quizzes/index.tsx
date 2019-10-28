@@ -42,4 +42,4 @@ const Quizzes: FC<QuizzesProps> = ({ history, location, match }) => {
   );
 };
 
-export default Quizzes;
+export default withRouter(Quizzes);
