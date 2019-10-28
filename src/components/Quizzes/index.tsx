@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { Button, Icon } from 'semantic-ui-react';
 
 import { quizData } from '../../quizData';
+import Spinner from '../common/Spinner';
 import QuizList from './QuizList';
 
 type QuizzesProps = {} & RouteComponentProps<{ code: string }>;
@@ -17,10 +18,14 @@ const Quizzes: FC<QuizzesProps> = ({ history, location, match }) => {
 
   return codes.includes(targetCode) ? (
     <>
-      <QuizList
-        question={quizData[targetCode].question}
-        answers={quizData[targetCode].answers}
-      />
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <QuizList
+          question={quizData[targetCode].question}
+          answers={quizData[targetCode].answers}
+        />
+      )}
       <Button
         basic
         color="grey"
