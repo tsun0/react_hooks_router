@@ -6,7 +6,6 @@ export interface Answer {
 
 export interface Questions {
   [code: string]: {
-    title: string;
     question: string;
     answers: Answer[];
   };
@@ -14,8 +13,7 @@ export interface Questions {
 
 export const quizData: Questions = {
   what: {
-    title: 'What am I?' ,
-    question: 'The more there is, the less you see. What am I?',
+    question: 'What can you hold in your left hand but, not in your right hand?',
     answers: [
         {
         id: 1,
@@ -30,6 +28,26 @@ export const quizData: Questions = {
         {
         id: 3,
         answer: 'light',
+        correct: false,
+        },
+    ],
+  },
+  what2: {
+    question: 'The more there is, the less you see. What am I?',
+    answers: [
+        {
+        id: 1,
+        answer: 'right elbow',
+        correct: true,
+        },
+        {
+        id: 2,
+        answer: 'left elbow',
+        correct: false,
+        },
+        {
+        id: 3,
+        answer: 'head',
         correct: false,
         },
     ],
